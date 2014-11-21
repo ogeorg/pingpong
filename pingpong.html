@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>PingPong - jsFiddle demo by oliviergeorg</title>
+
+    <script type='text/javascript' src='ball.js'></script>
+    <script type='text/javascript' src='campo.js'></script>
+    <script type='text/javascript' src='paddle.js'></script>
+    <script type='text/javascript' src='controller.js'></script>
+    <script type="text/javascript">
+        function init() {
+            var canvas = document.getElementById("campo");
+
+            // set the focus on the canvas
+            canvas.setAttribute('tabindex', '0');
+            canvas.focus();
+
+            // contexto
+            var context = canvas.getContext("2d");
+            context.fillStyle = '#000';
+            context.strokeStyle = '#fff';
+
+
+            var msgBox = document.getElementById("msg");
+
+            var settings = {
+                'CanvasWidth': canvas.width,
+                'CanvasHeight': canvas.height,
+                'PaddleWidth': 8,
+                'PaddleHeight': 48,
+                'context': context
+            };
+
+            var controller = new Controller(settings);
+            controller.paint();
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="pingpong.css">
+</head>
+
+<body onload='init()'>
+    <canvas id="campo" width="400" height="200"></canvas>
+    <p id='msg'></p>
+    <p>Teclee </p>
+    <ul>
+        <li>' ' (espacio) para lanzar la bola</li>
+        <li>'a' y 'q' para mover la raqueta izquierda</li>
+        <li>'l' y 'p' para mover la raqueta derecha</li>
+    </ul>
+
+</body>
+
+
+</html>

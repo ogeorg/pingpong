@@ -1,0 +1,7 @@
+canvas {
+	border: 1px solid red;
+     }
+#msg {
+    border: 1px dotted black;
+    height: 25px;
+} 
